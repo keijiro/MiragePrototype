@@ -25,6 +25,22 @@ namespace Mirage
             set { _exponent = value; }
         }
 
+        [SerializeField]
+        float _stripeFrequency = 3;
+
+        public float stripeFrequency {
+            get { return _stripeFrequency; }
+            set { _stripeFrequency = value; }
+        }
+
+        [SerializeField, Range(0, 1)]
+        float _stripeThreshold = 8;
+
+        public float stripeThreshold {
+            get { return _stripeThreshold; }
+            set { _stripeThreshold = value; }
+        }
+
         #endregion
 
         #region Private Resources
@@ -47,7 +63,8 @@ namespace Mirage
 
             _material.
                 Property("_Color", _color).
-                Property("_Exponent", _exponent);
+                Property("_Exponent", _exponent).
+                Property("_Stripe", _stripeFrequency, _stripeThreshold);
 
             Graphics.Blit(source, destination, _material, 0);
         }

@@ -17,6 +17,7 @@ Shader "Hidden/RimLight"
 
     half4 _Color;
     float _Exponent;
+    float2 _Stripe;
 
     half4 frag_rim(v2f_img i) : SV_Target
     {
@@ -37,6 +38,7 @@ Shader "Hidden/RimLight"
 
         float atten = pow(1 - abs(dot(normalize(pos_o), norm_o)), _Exponent);
         atten *= (depth_s < 1);
+        atten *= frac(pos_o.y * _Stripe.x) < _Stripe.y;
 
         half3 rgb = lerp(src.rgb, _Color.rgb * atten, _Color.a);
         return half4(rgb, 1);
