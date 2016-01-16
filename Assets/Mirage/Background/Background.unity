@@ -102,7 +102,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &376520923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,3 +454,59 @@ MonoBehaviour:
   _forceFade: 0
   _ditherMode: 0
   shader: {fileID: 4800000, guid: dc9775b65c52747e69fc4c854c00d696, type: 3}
+--- !u!1 &1906243947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1906243949}
+  - 114: {fileID: 1906243948}
+  m_Layer: 0
+  m_Name: Disc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1906243948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1906243947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c74e08d2be3014581e8eb1c18f9496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transition: 1
+  _rotationSpeed: .800000012
+  _animationSpeed: 1
+  _displacement: 1
+  _blockHighlight: 2
+  _baseColor: {r: .183823526, g: .183823526, b: .183823526, a: 1}
+  _emissionColor1: {r: .742647052, g: 0, b: 0, a: 1}
+  _emissionColor2: {r: 0, g: 0, b: 0, a: 1}
+  _metallic: .300000012
+  _smoothness: .555999994
+  _albedoTexture: {fileID: 2800000, guid: f6672ca95260c4899876666bd1726356, type: 3}
+  _textureScale: .800000012
+  _normalTexture: {fileID: 2800000, guid: d1a9f852928a64b17af2f24a73c39a89, type: 3}
+  _normalScale: .400000006
+  _mesh: {fileID: 11400000, guid: 02f07a361d9f2e0448b1e28750646c06, type: 2}
+  _randomSeed: 0
+  _shader: {fileID: 4800000, guid: e1713609d4b97e84d8ee41ab96ae1aa5, type: 3}
+--- !u!4 &1906243949
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1906243947}
+  m_LocalRotation: {x: .608761251, y: 0, z: 0, w: -.793353498}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
