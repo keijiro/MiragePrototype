@@ -36,7 +36,7 @@ Shader "Hidden/RimLight"
         float2 p13_31 = float2(unity_CameraProjection._13, unity_CameraProjection._23);
         float3 pos_o = float3((i.uv * 2 - float2(1, -1) - p13_31) / p11_22, 1) * depth_o;
 
-        float atten = pow(1 - abs(dot(normalize(pos_o), norm_o)), _Exponent);
+        float atten = pow(1 - saturate(-dot(normalize(pos_o), norm_o)), _Exponent);
         atten *= (depth_s < 1);
         atten *= frac(pos_o.y * _Stripe.x) < _Stripe.y;
 
