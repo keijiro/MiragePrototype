@@ -2329,7 +2329,7 @@ GameObject:
   - 4: {fileID: 1557754425}
   - 114: {fileID: 1557754424}
   m_Layer: 0
-  m_Name: Key u
+  m_Name: Key y
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2347,7 +2347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventType: 2
-  _keyCode: 117
+  _keyCode: 121
   _offValue: 0
   _onValue: 1
   _interpolator:
