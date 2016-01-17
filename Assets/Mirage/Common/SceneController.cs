@@ -9,14 +9,9 @@ namespace Mirage
             if (!Application.isEditor) Cursor.visible = false;
         }
 
-        public void LoadBackgroundScene()
+        public void SwitchScene(int index)
         {
-            Application.LoadLevel(0);
-        }
-
-        public void LoadForegroundScene()
-        {
-            Application.LoadLevel(1);
+            Application.LoadLevel(index);
         }
     }
 }
