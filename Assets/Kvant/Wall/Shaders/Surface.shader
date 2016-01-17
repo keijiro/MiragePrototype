@@ -39,6 +39,8 @@ Shader "Kvant/Wall/Surface"
         _OcclusionMap ("-", 2D) = "white"{}
         _OcclusionStr ("-", Range(0,1)) = 1
 
+        [HDR] _Emission ("-", Color) = (0, 0, 0)
+
         [Toggle]
         _RandomUV     ("-", Float) = 0
     }
@@ -52,6 +54,7 @@ Shader "Kvant/Wall/Surface"
         #pragma shader_feature _ALBEDOMAP
         #pragma shader_feature _NORMALMAP
         #pragma shader_feature _OCCLUSIONMAP
+        #pragma shader_feature _EMISSION
         #pragma target 3.0
 
         sampler2D _PositionTex;
@@ -71,6 +74,8 @@ Shader "Kvant/Wall/Surface"
         half _NormalScale;
         sampler2D _OcclusionMap;
         half _OcclusionStr;
+
+        half3 _Emission;
 
         half _RandomUV;
 
@@ -138,6 +143,10 @@ Shader "Kvant/Wall/Surface"
 
             o.Metallic = _Metallic;
             o.Smoothness = _Smoothness;
+
+        #if _EMISSION
+            o.Emission = _Emission;
+        #endif
         }
 
         ENDCG

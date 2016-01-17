@@ -1,12 +1,12 @@
 //
-// Custom material editor for Wall surface shader
+// Custom material editor for surface shaders
 //
 using UnityEngine;
 using UnityEditor;
 
 namespace Kvant
 {
-    public class WallMaterialEditor : ShaderGUI
+    public class SpraySurfaceMaterialEditor : ShaderGUI
     {
         MaterialProperty _colorMode;
         MaterialProperty _color;
@@ -19,7 +19,6 @@ namespace Kvant
         MaterialProperty _occlusionMap;
         MaterialProperty _occlusionStr;
         MaterialProperty _emission;
-        MaterialProperty _randomUV;
 
         static GUIContent _albedoText    = new GUIContent("Albedo");
         static GUIContent _normalMapText = new GUIContent("Normal Map");
@@ -40,7 +39,6 @@ namespace Kvant
             _occlusionMap = FindProperty("_OcclusionMap", props);
             _occlusionStr = FindProperty("_OcclusionStr", props);
             _emission     = FindProperty("_Emission", props);
-            _randomUV     = FindProperty("_RandomUV", props);
         }
 
         public override void OnGUI(MaterialEditor materialEditor, MaterialProperty[] properties)
@@ -89,10 +87,6 @@ namespace Kvant
             EditorGUILayout.Space();
 
             materialEditor.ShaderProperty(_emission, "Emission");
-
-            EditorGUILayout.Space();
-
-            materialEditor.ShaderProperty(_randomUV, "Random UV");
 
             return EditorGUI.EndChangeCheck();
         }
